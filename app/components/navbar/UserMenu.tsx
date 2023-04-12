@@ -71,7 +71,7 @@ const UserMenu = () => {
                 absolute
                 rounded-xl
                 shadow-md
-                w-[40vw]
+                w-[20vw]
                 bg-white
                 overflow-hidden
                 right-0
@@ -80,7 +80,7 @@ const UserMenu = () => {
                 ">
              <div className="
              flex
-             flex-row
+             flex-col
              cursor-pointer
              ">
                 <>
