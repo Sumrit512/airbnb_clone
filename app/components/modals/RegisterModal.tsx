@@ -52,7 +52,7 @@ const bodyContent = (
     flex-col
     gap-4
     ">
-
+      Hello Modal Body
     </div>
 )
 
