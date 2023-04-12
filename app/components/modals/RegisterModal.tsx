@@ -46,6 +46,19 @@ const RegisterModal = () => {
         }) 
     }
  
+const bodyContent = (
+    <div className="
+    flex
+    flex-col
+    gap-4
+    ">
+
+    </div>
+)
+
+
+
+
     return (
 <Modal
 disabled={isLoading}
@@ -54,7 +67,6 @@ title="Register"
 actionLabel="Continue"
 onClose={registerModal.onClose}
 onSubmit={handleSubmit(onSubmit)}
-
 />
     )
 }
