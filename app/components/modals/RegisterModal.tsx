@@ -9,7 +9,7 @@ import {
     SubmitHandler,
     useForm
 } from 'react-hook-form'
-
+import Modal from "./Modal";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 
@@ -32,10 +32,27 @@ const RegisterModal = () => {
         }
     })
 
+    const onSubmit: SubmitHandler<FieldValues> = (data) => {
+        setIsLoading(true);
+
+        axios.post('/api/register', data)
+        .then(()=> {
+            registerModal.onClose();
+        }).catch((e) => {
+            console.log(e)
+        })
+        .finally(() => {
+            setIsLoading(false);
+        }) 
+    }
+ 
     return (
-    <div>
-        
-    </div>
+<Modal
+disabled={isLoading}
+isOpen={registerModal.isOpen}
+
+
+/>
     )
 }
 
