@@ -4,10 +4,17 @@ import React, {useCallback, useState} from "react";
 import { AiOutlineMenu } from 'react-icons/ai'
 import Avatar from "../Avatar";
 import MenuItem from "./MenuItem";
+import {User} from '@prisma/client'
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 
-const UserMenu = () => {
+interface UserMenuProps{
+    currentUser: User
+}
+
+const UserMenu: React.FC<UserMenuProps> = ({
+    currentUser
+}) => {
     const registerModal = useRegisterModal()
  const loginModal = useLoginModal()
     const [isOpen, setIsOpen] = useState(false)
