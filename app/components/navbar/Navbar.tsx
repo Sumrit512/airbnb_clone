@@ -1,14 +1,21 @@
 'use client';
 // I no longer have to define the components in the components, i can define them whereever i want to,
 // just because this structure is familiar, we are gonna use the traditional way.
-
+import {User} from '@prisma/client'
 import React from "react";
 import Container from "../Container";
 import Logo from "./Logo";
 import UserMenu from "./UserMenu"
 import Search from "./Search";
 
-const Navbar = () => {
+interface NavbarProps{
+    currentUser?: User | null;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+    currentUser
+}) => {
+    console.log(currentUser)
     return( 
         <div className="
         fixed w-full bg-white z-10 shadow-sm   ">
