@@ -9,7 +9,7 @@ import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
 
 interface UserMenuProps{
-    currentUser: User
+    currentUser?: User | null
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({
