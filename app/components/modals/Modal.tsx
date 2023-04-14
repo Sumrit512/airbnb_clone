@@ -14,7 +14,7 @@ interface ModalProps {
     actionLabel: string;
     disabled: boolean;
     secondaryAction?: () => void;
-    secondaryLabel?: string;
+        secondaryActionLabel?: string;
 }
 
 
@@ -190,6 +190,7 @@ if(!isOpen){
                                             onClick={handleSubmit }
                                             />
                                          </div>
+                                         {footer}
 
 
                                      </div>

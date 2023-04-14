@@ -12,6 +12,9 @@ import {
 import Modal from "./Modal";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Heading from "../Heading";
+import Input from "../inputs/Input"
+import {toast} from 'react-hot-toast'
+import Button from "../Button";
 
 const RegisterModal = () => {
 
@@ -38,8 +41,8 @@ const RegisterModal = () => {
         axios.post('/api/register', data)
         .then(()=> {
             registerModal.onClose();
-        }).catch((e) => {
-            console.log(e)
+        }).catch((error) => {
+           toast.error("Something went wrong")
         })
         .finally(() => {
             setIsLoading(false);
@@ -55,10 +58,55 @@ const bodyContent = (
       <Heading
       title="Welcome to Airbnb"
       subtitle="Create an Account" />
+      <Input 
+      id="email"
+      label="Email"
+      errors={errors}
+      disabled={isLoading}
+      register={register}/>
+      <Input 
+      id='name'
+      label="Name"
+      disabled={isLoading}
+      register={register}
+      errors={errors}
+      required
+      />
+      <Input 
+      id="password"
+      label="Password"
+      type="password"
+      disabled={isLoading}
+      register={register}
+      errors={errors}
+      required
+      />
     </div>
 )
 
+const footerContent = (
+    <div className="
+    flex 
+    flex-col 
+    gap-4 
+    mt-3
+    ">
+<hr/>
+<Button 
+outline
+label="Continue with Google"
+icon={FcGoogle}
+onClick={()=> {}}
+/>
+<Button 
+outline
+label="Continue with Github"
+icon={AiFillGithub}
+onClick={() => {}}
+/>
 
+    </div>
+)
 
 
     return (
@@ -69,6 +117,8 @@ title="Register"
 actionLabel="Continue"
 onClose={registerModal.onClose}
 onSubmit={handleSubmit(onSubmit)}
+body={bodyContent}
+footer={footerContent}
 />
     )
 }
