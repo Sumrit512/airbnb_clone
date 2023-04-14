@@ -11,7 +11,7 @@ import {
 } from 'react-hook-form'
 import Modal from "./Modal";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
-
+import Heading from "../Heading";
 
 const RegisterModal = () => {
 
@@ -52,7 +52,9 @@ const bodyContent = (
     flex-col
     gap-4
     ">
-      Hello Modal Body
+      <Heading
+      title="Welcome to Airbnb"
+      subtitle="Create an Account" />
     </div>
 )
 
