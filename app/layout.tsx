@@ -32,14 +32,14 @@ export default async function RootLayout({
       <body className={font.className}>
        
         <ClientOnly>
+        <RentModal />
      <LoginModal />
      <RegisterModal />
-     <RentModal />
         <Navbar currentUser={currentUser} />
         <ToasterProvider/>
         </ClientOnly> 
         {children}
         </body>
-    </html>
+    </html> 
   )
 }
