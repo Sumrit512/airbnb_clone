@@ -24,6 +24,14 @@ const UserMenu: React.FC<UserMenuProps> = ({
  setIsOpen((value) => !value);
  },[])
 
+const onRent = useCallback(() => {
+   if(!currentUser) {
+    return loginModal.onOpen()
+   }  
+
+   // open rent modal
+},[currentUser, loginModal])
+
 
     return (
         <div className="
@@ -33,7 +41,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
            flex flex-row items-center gap-3
             "> 
               <div 
-              onClick={() => {}}
+              onClick={onRent}
               
               className="
               hidden
