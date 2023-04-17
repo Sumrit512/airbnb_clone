@@ -28,7 +28,7 @@ const LoginModal =() => {
     }
   } = useForm<FieldValues>({ 
     defaultValues: {
-        name: '',
+        email: '',
         password: ''
     }
   })
