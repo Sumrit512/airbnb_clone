@@ -11,15 +11,15 @@ const Avatar: React.FC<AvatarProps> = ({
     src
 }) => {
 return(
-<Image 
-className="
-rounded-full
-"
-width={10}
-height={10}
-src={src || '/images/placeholder.jpg'}
-alt='Avatar'
-/>
+        <Image 
+        className="
+        rounded-full
+        "
+        width={10}
+        height={10}
+        src={src || '/images/placeholder.jpg'}
+        alt='Avatar'
+        />
     )
 }
 
