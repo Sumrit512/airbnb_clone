@@ -1,4 +1,4 @@
-'use client';
+"use client";
 // I no longer have to define the components in the components, i can define them whereever i want to,
 // just because this structure is familiar, we are gonna use the traditional way.
 import {User} from '@prisma/client'
