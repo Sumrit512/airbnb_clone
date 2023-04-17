@@ -16,11 +16,18 @@ import Input from "../inputs/Input"
 import {toast} from 'react-hot-toast'
 import Button from "../Button";
 import {signIn}  from 'next-auth/react'
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 const RegisterModal = () => {
 
     const registerModal = useRegisterModal();
+    const loginModal = useLoginModal()
     const [isLoading, setIsLoading ] = useState(false);
+
+const toggle = useCallback(() => {
+registerModal.onClose()
+loginModal.onOpen()
+},[registerModal, loginModal])
 
     const {
         register,
@@ -129,7 +136,7 @@ text-neutral-800
 cursor-pointer
 hover:underline
 "
-onClick={registerModal.onClose}
+onClick={toggle}
 >
     Log in
 </div>
