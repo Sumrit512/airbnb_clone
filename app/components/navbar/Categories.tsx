@@ -1,8 +1,9 @@
 'use client';
 
 import Container from "../Container";
-import {TbBeach} from 'react-icons/tb'
-import {GiWindmill} from 'react-icons/gi'
+import {FaSkiing} from 'react-icons/fa'
+import {TbBeach, TbMountain, TbPool} from 'react-icons/tb'
+import {GiBoatFishing, GiIsland, GiWindmill} from 'react-icons/gi'
 import {MdOutlineVilla} from 'react-icons/md'
 import CategoryBox from "../CategoryBox";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -15,14 +16,40 @@ export const categories = [
     },
     {
         label: 'windmills',
-        icons: GiWindmill,
+        icon: GiWindmill,
         description: 'This property has Windmills',
     },
     {
         label: 'Modern',
         icon: MdOutlineVilla,
         description: 'This property is modern'
-    }
+    },
+    {
+        label: 'Countryside',
+        icon: TbMountain,
+        description: 'This property is in the countryside', 
+    },
+    {
+     label: 'Pools',
+     icon: TbPool,
+     description: 'This property has a pool',
+    },
+    {
+        label: 'Islands',
+        icon: GiIsland,
+        description: 'This property is on an island'
+    },
+    {
+        label: 'Lake',
+        icon: GiBoatFishing,
+        description: 'This property is close to a lake'
+    },
+    {
+      label: 'Sking',
+      icon: FaSkiing,
+      description: 'This property has skiing activities',
+    },
+
 ]
 
 const Categories = () => {
@@ -45,6 +72,7 @@ if(!isMainPage){
             flex
             flex-row
             items-center
+
             jusify-between
             overflow-x-auto
             "
@@ -54,8 +82,8 @@ if(!isMainPage){
               <CategoryBox 
               key={item.label}
               label={item.label}
-              description={item.description}
-              icon={item.icon}
+              selected={category === item.label}
+             icon={item.icon}
               />
                 )
                )}
