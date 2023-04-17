@@ -1,6 +1,6 @@
 import useLoginModal from "@/app/hooks/useLoginModal"
 import useRegisterModal from "@/app/hooks/useRegisterModal";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { AiFillGithub } from "react-icons/ai";
 import Modal from "./Modal";
@@ -19,6 +19,11 @@ const LoginModal =() => {
     const loginModal = useLoginModal();
     const registerModal = useRegisterModal()
     const [isLoading, setIsLoading] = useState(false)
+
+const toggle = useCallback(() => {
+loginModal.onClose()
+registerModal.onOpen()
+},[loginModal, registerModal])
 
   const {
     register,
@@ -69,7 +74,7 @@ justify-center
 gap-2
 ">
     <div> 
-    Already have an account? 
+First time using Airbnb?
     </div>
   
 
@@ -78,9 +83,9 @@ text-neutral-800
 cursor-pointer
 hover:underline
 "
-onClick={registerModal.onClose}
+onClick={toggle}
 >
-    Log in
+  Create an Account
 </div>
 </div>
 </div>
