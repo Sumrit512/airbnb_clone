@@ -34,6 +34,7 @@ return (
     }
     >
 <Icon size={30}/> 
+
 <div className="
 font-semibold
 ">
