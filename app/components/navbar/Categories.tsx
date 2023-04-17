@@ -2,6 +2,7 @@
 
 import Container from "../Container";
 import {FaSkiing} from 'react-icons/fa'
+import {IoDiamond} from 'react-icons/io5'
 import {BsSnow} from 'react-icons/bs'
 import {TbBeach, TbMountain, TbPool} from 'react-icons/tb'
 import {GiBoatFishing, GiCactus, GiCastle, GiCaveEntrance, GiForestCamp, GiIsland, GiWindmill} from 'react-icons/gi'
@@ -74,6 +75,11 @@ export const categories = [
         label: 'Desert',
         icon: GiCactus,
         description: 'This property is in the desert'
+    },
+    {
+        label: 'Lux',
+        icon: IoDiamond,
+        description: 'This property is Luxurious'
     }
 
 ]
