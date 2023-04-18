@@ -27,7 +27,7 @@ const handleUpload = useCallback((result: any) => {
     return (
 <CldUploadWidget
 onUpload={handleUpload}
-uploadPreset=""
+uploadPreset="l4we7hmx" // got it from the cloudinary settings upload
 options={{
     maxFiles: 1
 }}
@@ -53,12 +53,22 @@ options={{
           "
           >
           <TbPhotoPlus size={50}/>
-            <div className="
-            font-semibold
-            text-lg
-            ">
-          Click to upload
-            </div>
+                    <div className="
+                    font-semibold
+                    text-lg
+                    ">
+                Click to upload
+                    </div>
+                    {
+                        value && (
+                            <Image 
+                            alt="Upload"
+                            fill
+                            style={{ objectFit: 'cover'}}
+                            src={value}
+                            />
+                        )
+                    }
             </div>
         )
     }}
