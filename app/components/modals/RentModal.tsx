@@ -49,6 +49,7 @@ const {
 
 const category = watch('category')
 const location = watch('category')
+const guestCount = watch('guestCount')
 
 const Map = useMemo(() => dynamic(() => import('../Map'),{
     ssr: false
@@ -149,7 +150,9 @@ subtitle='What amenities do you have?'
 />
 <Counter
 title='Number of guest'
-subtitle='How many guest' />
+subtitle='How many guest' 
+value={guestCount}
+onChange={(value) => setCustomValue('guestCount', value)}/>
     </div>)
 }
 
