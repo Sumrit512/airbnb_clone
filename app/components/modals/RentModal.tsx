@@ -10,7 +10,7 @@ import CountrySelect from '../inputs/CountrySelect';
 import dynamic from 'next/dynamic';
 import Counter from '../inputs/Counter';
 import ImageUpload from '../inputs/ImageUpload';
-
+import Input from '../inputs/Input';
 
 enum STEPS {
     CATEGORY = 0,
@@ -25,6 +25,7 @@ enum STEPS {
 const RentModal = () => {
 
     const [step, setStep] = useState(STEPS.CATEGORY)
+    const [isLoading, setIsLoading] = useState(false)
 
 const {
     register,
@@ -99,23 +100,23 @@ let bodyContent = (
         title='which of these best describes your place?'
         subtitle='Pick a category'
         />
-        <div className='
-        grid
-        grid-cols-1
-        md:grid-cols-2
-        gap-3
-        max-h-[50vh]
-        overflow-y-auto
-        '>
-            {categories.map((item) => (
-                <div key={item.label}>
-                    <CategoryInput
-                    onClick = {(category) => setCustomValue('category', category)}
-                    selected={category === item.label}
-                    label={item.label}
-                    icon={item.icon}
-                    />
-                </div>
+            <div className='
+            grid
+            grid-cols-1
+            md:grid-cols-2
+            gap-3
+            max-h-[50vh]
+            overflow-y-auto
+            '>
+                {categories.map((item) => (
+                    <div key={item.label}>
+                        <CategoryInput
+                        onClick = {(category) => setCustomValue('category', category)}
+                        selected={category === item.label}
+                        label={item.label}
+                        icon={item.icon}
+                        />
+                    </div>
             )
                 
             )}
@@ -147,38 +148,40 @@ if(step === STEPS.LOCATION) {
 }
 
 if(step === STEPS.INFO) {
-    bodyContent =(<div>
+    bodyContent =(
+    <div>
 
-<Heading
-title='Share some basics about your place'
-subtitle='What amenities do you have?'
-/>
-<Counter
-title='Number of guest'
-subtitle='How many guest' 
-value={guestCount}
-onChange={(value) => setCustomValue('guestCount', value)}
-/>
+        <Heading
+        title='Share some basics about your place'
+        subtitle='What amenities do you have?'
+        />
+        <Counter
+        title='Number of guest'
+        subtitle='How many guest' 
+        value={guestCount}
+        onChange={(value) => setCustomValue('guestCount', value)}
+        />
 
-<hr/>
+        <hr/>
 
-<Counter
-title='Rooms'
-subtitle='How many rooms do you have' 
-value={roomCount}
-onChange={(value) => setCustomValue('roomCount', value)}
-/>
+        <Counter
+        title='Rooms'
+        subtitle='How many rooms do you have' 
+        value={roomCount}
+        onChange={(value) => setCustomValue('roomCount', value)}
+        />
 
-<hr/>
+        <hr/>
 
-<Counter
-title='Bathrooms'
-subtitle='How many bathrooms do you have' 
-value={bathroomCount}
-onChange={(value) => setCustomValue('bathroomCount', value)}
-/>
+        <Counter
+        title='Bathrooms'
+        subtitle='How many bathrooms do you have' 
+        value={bathroomCount}
+        onChange={(value) => setCustomValue('bathroomCount', value)}
+        />
 
-    </div>)
+    </div>
+    )
 }
 
 
@@ -211,6 +214,23 @@ if(step === STEPS.DESCRIPTION) {
             <Heading 
             title='How would you describe your place'
             subtitle='Short and sweet works best!'
+            />
+            <Input 
+            id='title'
+            label='Title'
+            disabled={isLoading}
+            register={register}
+            errors={errors}
+            required
+            />
+            <hr/>
+            <Input 
+            id='description'
+            label='Description'
+             disabled={isLoading}
+             register={register}
+             errors={errors}
+             required
             />
         </div>
     )
