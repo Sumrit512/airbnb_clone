@@ -154,7 +154,8 @@ subtitle='What amenities do you have?'
 title='Number of guest'
 subtitle='How many guest' 
 value={guestCount}
-onChange={(value) => setCustomValue('guestCount', value)}/>
+onChange={(value) => setCustomValue('guestCount', value)}
+/>
 
 <hr/>
 
@@ -162,7 +163,8 @@ onChange={(value) => setCustomValue('guestCount', value)}/>
 title='Rooms'
 subtitle='How many rooms do you have' 
 value={roomCount}
-onChange={(value) => setCustomValue('roomCount', value)}/>
+onChange={(value) => setCustomValue('roomCount', value)}
+/>
 
 <hr/>
 
@@ -170,9 +172,27 @@ onChange={(value) => setCustomValue('roomCount', value)}/>
 title='Bathrooms'
 subtitle='How many bathrooms do you have' 
 value={bathroomCount}
-onChange={(value) => setCustomValue('bathroomCount', value)}/>
+onChange={(value) => setCustomValue('bathroomCount', value)}
+/>
 
     </div>)
+}
+
+
+if(step === STEPS.IMAGES) {
+    bodyContent =(
+
+    <div className='
+    flex
+    flex-col
+    gap-8
+    '>
+        <Heading 
+        title='Add a photo of your place'
+        subtitle='Show guests what your place look like'
+        />
+    </div>
+    )
 }
 
 
