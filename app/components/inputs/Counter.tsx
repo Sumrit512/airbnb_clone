@@ -46,6 +46,12 @@ return(
                 ">
                     {title}
                 </div>
+                <div 
+                className="
+                font-light text-gray-600
+                ">
+                  {subtitle}
+                </div>
 
             </div>
                 
