@@ -183,22 +183,22 @@ onChange={(value) => setCustomValue('bathroomCount', value)}
 
 
 if(step === STEPS.IMAGES) {
-    bodyContent =(
-
-    <div className='
-    flex
-    flex-col
-    gap-8
-    '>
-        <Heading 
-        title='Add a photo of your place'
-        subtitle='Show guests what your place look like'
-        />
-        <ImageUpload 
-        value={imageSrc}
-        onChange={(value) => setCustomValue('imageSrc', value)}/>
-    </div>
-    )
+        bodyContent =(
+            <div className='
+            flex
+            flex-col
+            gap-8
+            '>
+                    <Heading 
+                    title='Add a photo of your place'
+                    subtitle='Show guests what your place look like'
+                    />
+                    <ImageUpload 
+                    value={imageSrc}
+                    onChange={(value) => setCustomValue('imageSrc', value)}
+                    />
+            </div>
+        )
 }
 
 if(step === STEPS.DESCRIPTION) {
