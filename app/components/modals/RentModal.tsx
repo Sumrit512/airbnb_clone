@@ -212,7 +212,17 @@ if(step === STEPS.DESCRIPTION) {
             title='How would you describe your place'
             subtitle='Short and sweet works best!'
             />
+        </div>
+    )
+}
 
+if(step === STEPS.PRICE) {
+    bodyContent = (
+        <div>
+            <Heading
+            title=''
+            subtitle=''
+            />
         </div>
     )
 }
