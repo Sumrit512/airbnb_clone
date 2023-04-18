@@ -29,7 +29,21 @@ onChange(value - 1)
 }, [value, onChange])
 
 return(
-        <div>
+        <div
+        className="
+        flex
+        flex-row
+        items-center
+        justify-between
+        "
+        >
+            <div className="
+            flex
+            flex-col
+            
+            ">
+
+            </div>
                 
         </div>
 )
