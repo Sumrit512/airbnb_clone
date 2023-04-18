@@ -147,7 +147,9 @@ if(step === STEPS.INFO) {
 title='Share some basics about your place'
 subtitle='What amenities do you have?'
 />
-<Counter />
+<Counter
+title='Number of guest'
+subtitle='How many guest' />
     </div>)
 }
 
