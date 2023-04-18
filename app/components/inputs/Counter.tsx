@@ -40,8 +40,12 @@ return(
             <div className="
             flex
             flex-col
-            
             ">
+                <div className="
+                font-medium
+                ">
+                    {title}
+                </div>
 
             </div>
                 
