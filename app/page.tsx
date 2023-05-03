@@ -1,8 +1,21 @@
 import ClientOnly from './components/ClientOnly'
 import Container from './components/Container'
 import './globals.css'
-
+import EmptyState from './components/EmptyState'
 export default function Home() {
+
+const isEmpty = true
+
+
+if(!isEmpty) {
+  return (
+    <ClientOnly>
+      <EmptyState />
+    </ClientOnly>
+  )
+}
+
+
   return (
 <ClientOnly>
   <Container>
@@ -17,7 +30,7 @@ export default function Home() {
     2xl:grid-cols-6
     gap-8
     '>
-
+          <div>My future listings</div>
     </div>
   </Container>
 </ClientOnly>
