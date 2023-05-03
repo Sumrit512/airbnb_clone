@@ -19,11 +19,11 @@ const font = Nunito({
   subsets: ["latin"]
 })
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+    export default async function RootLayout({
+      children,
+    }: {
+      children: React.ReactNode
+    }) {
 
   const currentUser = await getCurrentUser()
 
@@ -38,7 +38,9 @@ export default async function RootLayout({
         <Navbar currentUser={currentUser} />
         <ToasterProvider/>
         </ClientOnly> 
+        <div>
         {children}
+        </div>
         </body>
     </html> 
   )
